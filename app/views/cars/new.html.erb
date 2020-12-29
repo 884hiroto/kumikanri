@@ -1,0 +1,9 @@
+<h3>車 登録</h3>
+<%= form_tag('/car', method: :post) do %>
+    <span>P</span><input type="text" name="project">
+    <span>引当</span><input type="text" name="hikiate">
+    <span>車種</span><input type="text" name="model">
+    <span>組立開始</span><input type="date" name="k_start" value="2020-12-31">
+    <span>組立完了</span><input type="date" name="k_goal" value="2020-12-31">
+    <input type="submit" value="登録">
+<% end %>

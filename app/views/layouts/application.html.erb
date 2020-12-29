@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>MORITA 組立艤装管理アプリケーション</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <header>
+      <div class="main_logo">
+        <%= link_to root_path do %><h2>MORITA 組立艤装管理アプリケーション</h2><% end %>
+      </div>
+      <div class="header_menu">
+        <%= link_to 'ホームへ', root_path %>
+        <%= link_to '小日程管理', home_schedule_path %>
+      </div>    
+    </header>
+    <%= yield %>
+  </body>
+</html>

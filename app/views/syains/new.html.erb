@@ -1,0 +1,26 @@
+<%= @group.group %>
+<%= form_tag(schedules_group_syains_path, method: :post) do %>
+    <span>日</span><input type="date" name="day">
+    <span>人</span>
+        <select name="syain_id">
+            <% @names.each do |name| %> 
+                <option value="<%= name.id %>"><%= name.name %></option>
+            <% end %>
+        </select>
+    <span>車</span>
+        <select name="car_id">
+            <% @cars.each do |car| %> 
+                <option value="<%= car.id %>"><%= car.model %>  <%= car.hikiate %></option>
+            <% end %>
+        </select>
+    <span>開始</span><input type="time" name="s_start" step="900">
+    <span>終了</span><input type="time" name="s_end" step="900">
+    <span>仕事内容</span>
+        <select name="work_id">
+            <% @works.each do |work| %> 
+                <option value="<%= work.id %>"><%= work.work %></option>
+            <% end %>
+        </select>
+    <span>備考</span><textarea name="remarks" placeholder="必ず何か入力して下さい！">特になし</textarea>
+    <input type="submit" value="登録">
+<% end %>
